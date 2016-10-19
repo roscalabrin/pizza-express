@@ -1,0 +1,21 @@
+{
+  "name": "pizza-express",
+  "version": "1.0.0",
+  "description": "Unit Testing and Express Application",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roscalabrin/pizza-express.git"
+  },
+  "author": "Roberta Doyle",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.14.0"
+  },
+  "devDependencies": {
+    "mocha": "^3.1.2"
+  }
+}
