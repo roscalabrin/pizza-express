@@ -3,7 +3,7 @@ const app = require('../server')
 const request = require('request')
 
 describe('Server', () => {
-  before(done => {
+  before((done) => {
     this.port = 9876
     this.server = app.listen(this.port, (err, result) => {
       if (err) {return done(err)}
