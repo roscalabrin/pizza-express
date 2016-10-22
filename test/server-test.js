@@ -115,5 +115,16 @@ describe('Server', () => {
         done()
       })
     })
+    
+    it('should redirect the user to their new pizza', (done) => {
+      var payload = { pizza: fixtures.validPizza }
+
+      this.request.post('/pizzas', { form: payload }, (error, response) => {
+        if (error) { done(eror) }
+        var newPizzaId = Object.keys(app.locals.pizzas)[0]
+        assert.equal(response.headers.location, '/pizzas/' + newPizzaId)
+        done()
+      })
+    })
   })
 })
