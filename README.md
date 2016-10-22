@@ -19,4 +19,3 @@ Run the test suite with Mocha
 ```
 npm test
 ```
-````````
