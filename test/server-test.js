@@ -71,6 +71,19 @@ describe('Server', () => {
         done()
       })
     })
+
+    it('should return a page with the toppings of the pizza', (done) => {
+      var pizzaToppings = app.locals.pizzas.testPizza.toppings
+
+      this.request.get('pizzas/testPizza', (error, response) => {
+      if(error) { done(error) }
+      for (var i = 0; i < pizzaToppings; i++) {
+        asset(response.body.includes(pizza.toppings[i]),
+          `"${response.body}" does not include "${pizza.toppings[i]}".`)
+      }
+      done()
+      })
+    })
   })
   
   describe('POST /pizzas', () => {
